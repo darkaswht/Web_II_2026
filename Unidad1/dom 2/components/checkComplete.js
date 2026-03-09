@@ -1,8 +1,8 @@
 const checkComplete = () => {
         const i = document.createElement('i');
         i.classList.add('far', 'fa-check-square', 'icon');
-        i.addEventListener('click', color); // ✅ evento agregado
-        return i; // ✅ ahora retorna el elemento
+        i.addEventListener('click', color); //  evento agregado
+        return i; //  ahora retorna el elemento
     }
 
     const color = (evento) => {
