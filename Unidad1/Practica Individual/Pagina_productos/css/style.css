@@ -1,0 +1,257 @@
+body{
+    background: linear-gradient(135deg,#f2f5f7,#e9eef2);
+    font-family:'Open Sans',Arial,sans-serif;
+    color:#333;
+}
+
+/* CONTENEDOR */
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+/* HEADER */
+
+.headerPrincipal{
+    background:#ffffff;
+    padding:20px 0;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.headerPrincipal-titulo{
+    font-weight:bold;
+    font-size:2em;
+}
+
+.headerPrincipal-titulo a{
+    text-decoration:none;
+    color:#333;
+}
+
+/* NAV */
+
+.headerPrincipal-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.headerPrincipal-nav-link{
+    padding:10px 18px;
+    color:#555;
+    background:#f7f9fb;
+    border-radius:20px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.headerPrincipal-nav-link:hover{
+    background:#4DBA7A;
+    color:white;
+}
+
+/* CONTENIDO */
+
+.contenidoPrincipal{
+    margin:40px 0;
+}
+
+.subtitulo{
+    font-weight:bold;
+    font-size:34px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+/* PRODUCTOS */
+
+.contenidoPrincipal-productos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.contenidoPrincipal-productos-link{
+    height:120px;
+    width:220px;
+    background:white;
+    text-align:center;
+    margin:10px;
+
+    border-radius:12px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+
+    transition:.3s;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.contenidoPrincipal-productos-link:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.contenidoPrincipal-productos-link a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ICONOS */
+
+.contenidoPrincipal-productos-link a:before{
+    content:'';
+    display:block;
+    width:45px;
+    height:45px;
+    margin-right:10px;
+}
+
+.contenidoPrincipal-productos-link:nth-child(even) a:before{
+    background:url(../img/zapato.png) no-repeat center;
+    background-size:contain;
+}
+
+.contenidoPrincipal-productos-link:nth-child(odd) a:before{
+    background:url(../img/ropita.png) no-repeat center;
+    background-size:contain;
+}
+
+/* VIDEO */
+
+.videoSobre{
+    background:#343c44;
+    padding:40px 0;
+}
+
+.videoSobre .container{
+    color:white;
+}
+
+.videoSobre-video{
+    max-width:100%;
+    border-radius:10px;
+}
+
+.videoSobre-sobre-title{
+    font-size:1.4em;
+    font-weight:bold;
+}
+
+.videoSobre-sobre{
+    font-size:1.1em;
+    line-height:1.8;
+}
+
+.videoSobre-button{
+    border-radius:30px;
+    background:#ec6e5a;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    font-size:14px;
+    margin-top:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.videoSobre-button:hover{
+    background:#d85a47;
+}
+
+/* FOOTER */
+
+.rodapePrincipal{
+    background:#23292d;
+    padding:30px 0;
+    color:white;
+}
+
+.rodapePrincipal .subtitulo{
+    color:white;
+}
+
+.rodapePrincipal-navMap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.rodapePrincipal-navMap-link{
+    text-decoration:none;
+    color:#ddd;
+    font-size:.9em;
+}
+
+.rodapePrincipal-navMap-link:hover{
+    color:#fff;
+}
+
+/* TITULOS FOOTER */
+
+.navmap-list-title{
+    font-weight:700;
+    font-size:1.2em;
+    margin:10px 0;
+    padding-left:8px;
+}
+
+.navmap-list-title-zara{border-left:4px solid #EC6E5A;}
+.navmap-list-title-adidas{border-left:4px solid #AD85BF;}
+.navmap-list-title-nike{border-left:4px solid #5EC6F3;}
+.navmap-list-title-polo{border-left:4px solid #25D285;}
+
+/* FORMULARIO */
+
+.rodapePrincipal-contatoForm{
+    margin-top:25px;
+}
+
+.rodapePrincipal-contatoForm-emailInput{
+    padding:10px;
+    border-radius:5px 0 0 5px;
+    border:1px solid #4DBA7A;
+}
+
+.rodapePrincipal-contatoForm-submit{
+    padding:10px 18px;
+    border:none;
+    background:#4DBA7A;
+    color:white;
+    border-radius:0 5px 5px 0;
+    cursor:pointer;
+}
+
+.rodapePrincipal-contatoForm-submit:hover{
+    background:#3da56b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.headerPrincipal-nav{
+    justify-content:center;
+}
+
+.contenidoPrincipal-productos{
+    flex-direction:column;
+    align-items:center;
+}
+
+.rodapePrincipal-navMap{
+    flex-direction:column;
+}
+
+}

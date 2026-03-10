@@ -1,0 +1,44 @@
+.mensaje{
+padding:4rem 2rem;
+background:#f5f7fa;
+}
+
+.mensaje__lista{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:2rem;
+}
+
+.mensaje__item{
+background:white;
+padding:2rem;
+max-width:280px;
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+display:flex;
+flex-direction:column;
+}
+
+.mensaje__item__titulo{
+font-family:'Montserrat',sans-serif;
+color:#2c5364;
+margin-bottom:.8rem;
+}
+
+.mensaje__item__texto{
+font-size:.95rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.mensaje__lista{
+flex-direction:column;
+align-items:center;
+}
+
+}

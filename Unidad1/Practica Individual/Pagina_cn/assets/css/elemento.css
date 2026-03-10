@@ -1,0 +1,45 @@
+.elemento{
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:4rem 2rem;
+background:white;
+}
+
+.elemento__titulo{
+font-family:'Montserrat',sans-serif;
+font-size:2.3rem;
+margin-bottom:2rem;
+}
+
+.elemento__figura{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:1rem;
+}
+
+.elemento__figura--imagen{
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+max-width:500px;
+}
+
+.elemento__figura--texto{
+font-size:1.2rem;
+font-weight:500;
+}
+
+.elemento__boton{
+margin-top:2rem;
+padding:.8rem 2rem;
+border-radius:30px;
+border:2px solid #e74c3c;
+color:#e74c3c;
+transition:.3s;
+}
+
+.elemento__boton:hover{
+background:#e74c3c;
+color:white;
+}
