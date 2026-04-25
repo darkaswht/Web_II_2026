@@ -1,47 +1,39 @@
-import { clientService } from "../client-service.js";
-const crearfila = (nombre, email) =>{
-    const fila = document.createElement('tr');//creamosnueva fila
-    //html como variable
-    const contenido = `
-    <td class="td" data-td>
-        ${nombre}
-    </td>
-    <td>${email}</td>
-    <td>
-        <ul class="table__button-control">
-        <li>
-            <a
-            href="../screens/editar_cliente.html"
-            class="simple-button simple-button--edit"
-            >
-            Editar
-            </a>
-        </li>
-        <li>
-            <button class="simple-button simple-button--delete" type="button" id="${id}">
-            Eliminar
-            </button>
-        </li>
-        </ul>
-    </td>
-    `;
-    fila.innerHTML=contenido;
-
-    const btn = fila.querySelector("button");
-    btn.addEventListener("click",()=>{
-        const id=btn.id;
-        clientService.eliminarCliente(id).then(respuesta=>alert("eliminado").window.location.reload()
-    ).catch(error=>alert("error"));
-    })
-    return fila;
-}
+import { clientService } from "../service/client-service.js";
 
 const table = document.querySelector("[data-table]");
-clientService
-.listar_clientes()
-    .then((data)=>{
-        data.forEach(({nombre, email}) => {
-            const nuevaFila=crearFila(nombre,email,id)
-            table.appendChild(nuevaFila)
+const endpoint = table.dataset.endpoint;
+const campo2Label = table.dataset.campo2;
+const editUrl = table.dataset.editUrl;
+const errorUrl = table.dataset.errorUrl;
+
+const crearFila = (nombre, campo2Val, id) => {
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+        <td class="td" data-td>${nombre}</td>
+        <td>${campo2Val}</td>
+        <td>
+            <ul class="table__button-control">
+                <li>
+                    <a href="${editUrl}?id=${id}" class="simple-button simple-button--edit">Editar</a>
+                </li>
+                <li>
+                    <button class="simple-button simple-button--delete" type="button" data-id="${id}">Eliminar</button>
+                </li>
+            </ul>
+        </td>
+    `;
+    fila.querySelector("button").addEventListener("click", (e) => {
+        clientService.eliminar(endpoint, e.target.dataset.id)
+            .then(() => window.location.reload())
+            .catch(() => window.location.href = errorUrl);
+    });
+    return fila;
+};
+
+clientService.listar(endpoint)
+    .then((data) => {
+        data.forEach((item) => {
+            table.appendChild(crearFila(item.nombre, item[campo2Label], item.id));
         });
-}).catch((error)=>alert("error"));
+    })
+    .catch(() => window.location.href = errorUrl);

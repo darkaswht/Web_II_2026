@@ -1,13 +1,17 @@
 import { clientService } from "../service/client-service.js";
+
 const formulario = document.querySelector("[data-form]");
-formulario.addEventListener("submit",(evento)=>{
+const endpoint = formulario.dataset.endpoint;
+const campo2 = formulario.dataset.campo2;
+const successUrl = formulario.dataset.successUrl;
+const errorUrl = formulario.dataset.errorUrl;
+
+formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
     const nombre = document.querySelector("[data-nombre]").value;
-    const email = document.querySelector("[data-email]").value;
-    clientService.crearCliente(nombre,email).then((respuesta)=>{
-        console.log("todo ok", respuesta);
-        window.location.href="/screens/registro_cliente.html";
-    }).catch((error)=>{
-        console.log("todo mal", error);
-    });
+    const campo2Val = document.querySelector("[data-email]").value;
+
+    clientService.crear(endpoint, nombre, campo2, campo2Val)
+        .then(() => window.location.href = successUrl)
+        .catch(() => window.location.href = errorUrl);
 });

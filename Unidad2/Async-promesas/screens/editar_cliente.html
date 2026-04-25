@@ -39,7 +39,7 @@
     <main class="container flex flex--center flex--column">
       <section class="card cadastro">
         <h1 class="card__title">Editar</h1>
-        <form action="#" class="flex flex--column" data-form>
+        <form action="#" class="flex flex--column" data-form data-endpoint="perfil" data-success-url="./edicion_concluida.html" data-error-url="./error.html">
           <div class="input-container">
             <input
               name="nombre"
@@ -70,5 +70,6 @@
         </form>
       </section>
     </main>
+    <script type="module" src="../controllers/actualizar controler.js"></script>
   </body>
 </html>

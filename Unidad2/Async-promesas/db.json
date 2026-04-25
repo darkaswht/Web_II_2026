@@ -11,15 +11,6 @@
       "nombre": "Producto 1",
       "precio": 10.99,
       "id": "1"
-    },
-    {
-      "nombre": "leche",
-      "precio": "34",
-      "id": "rmA7t68F9ig"
-    },
-    {
-      "nombre": "fefs",
-      "id": "xlnASEYbQk8"
     }
   ],
   "pets": [
@@ -27,10 +18,6 @@
       "nombre": "Fido",
       "especie": "Dog",
       "id": "1"
-    },
-    {
-      "nombre": "fsf",
-      "id": "TUzf7dWNEEM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
